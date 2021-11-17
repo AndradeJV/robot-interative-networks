@@ -1,5 +1,5 @@
 from functions.Classes.Login import Login
-from .functions.global_functions import Global_Functions
+from ..Funcoes_Globais.Funcoes_Globais import Funcoes_Globais
 import json
 
 
@@ -11,11 +11,11 @@ def login_usuario_twitter():
         data_tweets = json.load(f_tweets)
     
     Login.abrir_twitter()
-    Global_Functions.maximizar_janela()
+    Funcoes_Globais.maximizar_janela()
     Login.click_logar()
     Login.inserir_usuario(data_login.get('login'))
     Login.inserir_senha(data_login.get('senha'))
     Login.realizar_tweet(data_tweets.get('tweetTres'))
-    Global_Functions.sair()
+    Funcoes_Globais.sair()
 
 login_usuario_twitter()

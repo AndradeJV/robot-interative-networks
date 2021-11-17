@@ -1,5 +1,5 @@
 from functions.Classes.Registro import Registro
-from .functions.global_functions import Global_Functions
+from ..Funcoes_Globais.Funcoes_Globais import Funcoes_Globais
 import json
 
 
@@ -9,7 +9,7 @@ def registrar_usuario_twitter():
 
 
   Registro.abrir_twitter()
-  Global_Functions.maximizar_janela()
+  Funcoes_Globais.maximizar_janela()
   Registro.click_registrar()
   Registro.acessar_iframe()
   Registro.preencher_nome(data_login.get("nome"))
@@ -19,7 +19,7 @@ def registrar_usuario_twitter():
   Registro.preencher_mes_nascimento(data_login.get("mesNascimento"))
   Registro.preencher_ano_nascimento(data_login.get("anoNascimento"))
   Registro.click_button_next()
-  Global_Functions.sair()
+  Funcoes_Globais.sair()
 
 
 registrar_usuario_twitter()

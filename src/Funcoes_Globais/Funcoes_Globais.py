@@ -4,7 +4,7 @@ import time
 driver = webdriver.Chrome()
 
 
-class Global_Functions:
+class Funcoes_Globais:
   def maximizar_janela():
     time.sleep(1)
     driver.maximize_window()
