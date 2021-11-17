@@ -6,6 +6,11 @@ driver = webdriver.Chrome()
 
 
 class Registro:
+  def acessar_iframe():
+    time.sleep(2)
+    iframe = driver.find_element_by_css_selector(".css-1dbjc4n r-1n7yuxj")
+    driver.switch_to.frame(iframe)
+    time.sleep(3)
 
   def click_registrar():
     driver.find_element_by_css_selector("a > div").click()
@@ -46,3 +51,7 @@ class Registro:
   def preencher_ano_nascimento(ano):
     driver.find_element_by_id("#SELECTOR_3").send_keys(ano)
     time.sleep(1)
+
+  def logoff():
+    Aviso_Saida.saida()
+    driver.quit()

@@ -1,5 +1,4 @@
 from selenium import webdriver
-from .Aviso_Saida import Aviso_Saida
 import time
 
 driver = webdriver.Chrome()
@@ -30,7 +29,3 @@ class Login:
     time.sleep(3)
     driver.find_element_by_css_selector(".DraftEditor-editorContainer > div > div > div > div").send_keys(mensagem)
     driver.find_element_by_css_selector(".r-ymttw5.r-o7ynqc.r-6416eg.r-lrvibr > div > span > span").click()
-
-  def logoff():
-    Aviso_Saida.saida()
-    driver.quit()

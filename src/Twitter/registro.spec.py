@@ -1,9 +1,7 @@
-import json
 from functions.Classes.Registro import Registro
-from selenium import webdriver
+from .functions.global_functions import Global_Functions
+import json
 
-driver = webdriver.Chrome()
-# .r-1dqxon3 > div
 
 def registrar_usuario_twitter():
   with open("src/Twitter/fixtures/registro/registro.teste.json") as f_login:
@@ -11,11 +9,9 @@ def registrar_usuario_twitter():
 
 
   Registro.abrir_twitter()
+  Global_Functions.maximizar_janela()
   Registro.click_registrar()
-
-  iframe = driver.find_element_by_css_selector(".r-1wbh5a2.r-1jgb5lz.r-1ye8kvj.r-13qz1uu")
-  driver.switch_to_frame(iframe)
-
+  Registro.acessar_iframe()
   Registro.preencher_nome(data_login.get("nome"))
   Registro.click_preencher_com_email()
   Registro.click_preencher_com_email(data_login.get("email"))
@@ -23,6 +19,7 @@ def registrar_usuario_twitter():
   Registro.preencher_mes_nascimento(data_login.get("mesNascimento"))
   Registro.preencher_ano_nascimento(data_login.get("anoNascimento"))
   Registro.click_button_next()
+  Global_Functions.sair()
 
 
 registrar_usuario_twitter()
