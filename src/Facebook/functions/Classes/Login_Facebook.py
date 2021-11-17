@@ -9,6 +9,10 @@ class Login_Facebook:
   def click_button_log_in():
     driver.find_element_by_name("login").click()
     time.sleep(5)
+    
+  
+  def click_button_publicar():
+    driver.find_element_by_css_selector(".bp9cbjyn > div > div > div.bp9cbjyn.j83agx80.taijpn5t.c4xchbtz.by2jbhx6.a0jftqn4").click()
 
 
   def abrir_facebook():
@@ -86,14 +90,12 @@ class Login_Facebook:
 
   def realizar_publicacao_textual(texto):
     driver.find_element_by_css_selector(".k4urcfbm.qv66sw1b > span").click()
-
-    time.sleep(4)
-    iframe = driver.find_element_by_css_selector(".du4w35lb > div > div.iqfcb0g7.tojvnm2t.a6sixzi8.k5wvi7nf.q3lfd5jv.pk4s997a.bipmatt0.cebpdrjk.qowsmv63.owwhemhu.dp1hu0rb.dhp61c6y.l9j0dhe7.iyyx5f41.a8s20v7p > div > div > div")
-    driver.switch_to.frame(iframe)
-
     time.sleep(2)
     driver.find_element_by_css_selector("._5rpb > div > div > div > div").send_keys(texto)
+    
 
+  def mensagem_exito():
+    print("Automação realizada com sucesso")
 
   def encerrar_sessao():
     driver.quit()

@@ -1,5 +1,4 @@
 from functions.Classes.Login_Facebook import Login_Facebook as lg_fb
-#from ..Funcoes_Globais.Funcoes_Globais import Funcoes_Globais
 import json
 
 
@@ -20,8 +19,8 @@ def login_usuario_facebook():
   lg_fb.go_pagina_inicial()
   lg_fb.validar_url_pag_inicial()
   lg_fb.realizar_publicacao_textual(data_publi.get('publicacao1'))
-  #lg_fb.encerrar_sessao()
-
-  #Funcoes_Globais.sair()
+  lg_fb.click_button_publicar()
+  lg_fb.encerrar_sessao()
+  lg_fb.mensagem_exito()
 
 login_usuario_facebook()
