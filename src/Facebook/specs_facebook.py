@@ -2,6 +2,8 @@ from functions.Classes.Facebook import Facebook
 import json
 
 
+# Criação do script
+
 def logar_facebook():
   with open("src/Facebook/fixtures/pessoal.json") as f_login:
     data_login = json.load(f_login)
@@ -16,8 +18,7 @@ def logar_facebook():
   Facebook.go_pagina_inicial()
   Facebook.validar_url_pag_inicial()
   Facebook.mensagem_exito()  
-  #
-  # dFacebook.encerrar_sessao()
+  # Facebook.encerrar_sessao()
 
 
 def logar_publicar_texto():
@@ -28,7 +29,8 @@ def logar_publicar_texto():
   logar_facebook()
   Facebook.realizar_publicacao_textual(data_publi.get('publicacao1'))
   Facebook.mensagem_exito()
-  Facebook.encerrar_sessao()
+  # Facebook.encerrar_sessao()
+
 
 def mandar_mensagem_textual():
   with open("src/Facebook/fixtures/usuarios.json") as f_usuarios:
@@ -43,6 +45,8 @@ def mandar_mensagem_textual():
   Facebook.click_button_mensagem()
   Facebook.enviar_mensagem(data_msgs.get('mensagem1'))
 
+
+# Chamada das funções
 
 # logar_facebook()
 # logar_publicar_texto()
