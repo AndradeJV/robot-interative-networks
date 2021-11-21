@@ -5,7 +5,7 @@ import json
 driver = webdriver.Chrome()
 
 
-class Login_Facebook:
+class Facebook:
   def click_button_log_in():
     driver.find_element_by_name("login").click()
     time.sleep(5)
@@ -87,12 +87,11 @@ class Login_Facebook:
     else:
       driver.quit()
 
-
   def realizar_publicacao_textual(texto):
+    time.sleep(2)
     driver.find_element_by_css_selector(".k4urcfbm.qv66sw1b > span").click()
     time.sleep(2)
     driver.find_element_by_css_selector("._5rpb > div > div > div > div").send_keys(texto)
-    
 
   def mensagem_exito():
     print("Automação realizada com sucesso")
