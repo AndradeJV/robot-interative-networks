@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import time
 import json
 
@@ -15,6 +16,16 @@ class Facebook:
     driver.find_element_by_css_selector(".bp9cbjyn > div > div > div.bp9cbjyn.j83agx80.taijpn5t.c4xchbtz.by2jbhx6.a0jftqn4").click()
 
 
+  def click_usuario_pesquisado():
+    time.sleep(1)
+    driver.find_element_by_css_selector("#dir_nav_sts\:100013089223359 > div > a > div > div.rq0escxv.l9j0dhe7.du4w35lb.j83agx80.cbu4d94t.g5gj957u.d2edcug0.hpfvmrgz.rj1gh0hx.buofh1pr.p8fzw8mz.pcp91wgn.iuny7tx3.ipjc6fyt").click()
+    time.sleep(2)
+
+  def click_button_mensagem():
+    driver.find_element_by_css_selector(".h374gqy3 > div > div > div:nth-child(2) > div > div > div").click()
+    time.sleep(2)
+
+  
   def abrir_facebook():
     driver.get("https://www.facebook.com/")
     time.sleep(1)
@@ -92,6 +103,16 @@ class Facebook:
     driver.find_element_by_css_selector(".k4urcfbm.qv66sw1b > span").click()
     time.sleep(2)
     driver.find_element_by_css_selector("._5rpb > div > div > div > div").send_keys(texto)
+
+  def pesquisar_usuario(usuario):
+    driver.find_element_by_css_selector("label > input").send_keys(usuario)
+    time.sleep(2)
+
+  def enviar_mensagem(mensagem):
+    driver.find_element_by_css_selector("div._5rpb > div > div > div > div").send_keys(mensagem)
+    time.sleep(2)
+    driver.find_element_by_css_selector("div._5rpb > div > div > div > div").send_keys(Keys.ENTER)
+    time.sleep(2)
 
   def mensagem_exito():
     print("Automação realizada com sucesso")
