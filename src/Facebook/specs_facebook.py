@@ -17,8 +17,7 @@ def logar_facebook():
   Facebook.validar_usuario()
   Facebook.go_pagina_inicial()
   Facebook.validar_url_pag_inicial()
-  Facebook.mensagem_exito()  
-  # Facebook.encerrar_sessao()
+  
 
 
 def logar_publicar_texto():
@@ -33,17 +32,15 @@ def logar_publicar_texto():
 
 
 def mandar_mensagem_textual():
-  with open("src/Facebook/fixtures/usuarios.json") as f_usuarios:
-    data_users = json.load(f_usuarios)
+  with open("src/Facebook/fixtures/dadosIntegracao.json") as f_usuarios:
+    data_integracao = json.load(f_usuarios)
 
-  with open("src/Facebook/fixtures/mensagem.json") as f_mensagem:
-    data_msgs = json.load(f_mensagem)
 
   logar_facebook()
-  Facebook.pesquisar_usuario(data_users.get('Usuario1'))
+  Facebook.pesquisar_usuario(data_integracao.get('Usuario1').get('nome'))
   Facebook.click_usuario_pesquisado()
   Facebook.click_button_mensagem()
-  Facebook.enviar_mensagem(data_msgs.get('mensagem1'))
+  Facebook.enviar_mensagem(data_integracao.get('Usuario1').get('mensagens').get('mensagem1'))
 
 
 # Chamada das funções
@@ -52,3 +49,7 @@ def mandar_mensagem_textual():
 # logar_publicar_texto()
 
 mandar_mensagem_textual()
+
+
+Facebook.encerrar_sessao()
+Facebook.mensagem_exito()

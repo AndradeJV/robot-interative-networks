@@ -7,6 +7,10 @@ driver = webdriver.Chrome()
 
 
 class Facebook:
+  def abrir_facebook():
+    driver.get("https://www.facebook.com/")
+    time.sleep(1)
+
   def click_button_log_in():
     driver.find_element_by_name("login").click()
     time.sleep(5)
@@ -24,11 +28,6 @@ class Facebook:
   def click_button_mensagem():
     driver.find_element_by_css_selector(".h374gqy3 > div > div > div:nth-child(2) > div > div > div").click()
     time.sleep(2)
-
-  
-  def abrir_facebook():
-    driver.get("https://www.facebook.com/")
-    time.sleep(1)
 
 
   def preencher_email(email):
