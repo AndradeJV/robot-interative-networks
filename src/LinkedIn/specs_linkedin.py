@@ -20,7 +20,7 @@ def logar_linkedin():
 
 def enviar_mensagem():
   logar_linkedin()
-  lk.pesquisar_usuario_via_pagina_inicial("Isabelly Vitorino")
+  lk.pesquisar_usuario_via_pagina_inicial("")
   lk.click_usuario_pesquisado()
   lk.click_button_enviar_msg_via_perfil()
   lk.enviar_mensagem_via_pesquisa("Teste automatizado")

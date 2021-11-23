@@ -3,4 +3,18 @@
 
 ## Pacotes instalados:
   - Selenium, comando: "pip install selenium"
-  - yaml, comando: "pip install yaml"
+  
+
+### Funcionalidades:
+  - Twitter:
+    - Logar
+    - Realizar tweets
+  
+  - Facebook:
+    - Logar
+    - Realizar publicação textual
+    - Enviar mensagem
+
+  - LinkedIn:
+    - Logar
+    - Enviar mensagem, em desenvolvimento
